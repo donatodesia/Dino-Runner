@@ -1,28 +1,32 @@
 import { Scene } from 'phaser';
 
-export class Game extends Scene
-{
-    constructor ()
-    {
+export class Game extends Scene {
+    constructor() {
         super('Game');
     }
 
-    create ()
-    {
-        this.cameras.main.setBackgroundColor(0x00ff00);
+    create() {
+        this.cameras.main.setBackgroundColor(0xdedede);
 
-        this.add.image(512, 384, 'background').setAlpha(0.7);
+        this.createPlayer();
+        this.createEnviroment();
+        this.handleInputs();
+    }
 
-        this.add.text(512, 384, 'Make something fun!\nand share it with us:\nsupport@phaser.io', {
-            fontFamily: 'Arial Black', fontSize: 38, color: '#ffffff',
-            stroke: '#000000', strokeThickness: 8,
-            align: 'center'
-        }).setOrigin(0.5);
+    createPlayer() {
+        this.add.sprite(0, this.scale.height, "dino-idle")
+            .setOrigin(0,1);
+    }
 
+    createEnviroment() {
+        this.add
+            .tileSprite(0, this.scale.height, 1000, 26, 'ground')
+            .setOrigin(0, 1)
+    }
+
+    handleInputs() {
         this.input.once('pointerdown', () => {
-
             this.scene.start('GameOver');
-
         });
     }
 }
