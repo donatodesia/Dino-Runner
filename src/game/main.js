@@ -12,14 +12,15 @@ const config = {
     width: 1000,
     height: 340,
     pixelArt: true,
-    // Physics: {
-    //     default: 'arcade',
-    //     arcade: {
-    //         gravity: {
-    //             y: 200
-    //         }
-    //     }
-    // },
+    Physics: {
+        default: 'arcade',
+        arcade: {
+            // gravity: {
+            //     y: 200
+            // }
+            debug: true
+        }
+    },
     parent: 'game-container',
     backgroundColor: '#028af8',
     scale: {
