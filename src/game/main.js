@@ -12,7 +12,7 @@ const config = {
     width: 1000,
     height: 340,
     pixelArt: true,
-    Physics: {
+    physics: {
         default: 'arcade',
         arcade: {
             // gravity: {
